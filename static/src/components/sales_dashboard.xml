@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="owl.OwlSalesDashboard" owl="1">
+        <div class="vh-100 overflow-auto bg-muted">
+            <div class="row m-3">
+                <div class="col-lg-7">
+                    <div class="row">
+                        <div class="col m-0 p-0">
+                            <div class="shadow-sm border m-2 p-4 bg-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h1 class="text-primary fw-bold">BPC Inventory Stock</h1>
+                                    <div>
+                                        <select class="form-select">
+                                            <option value="0">Select Period</option>
+                                            <option value="7">Last 7 Days</option>
+                                            <option value="30">Last 30 Days</option>
+                                            <option value="90">Last 90 Days</option>
+                                            <option value="365">Last 365 Days</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!--        Start the warehouse section-->
+<!--                    <div class="row justify-content-center">-->
+<!--                        <KpiCard name="'PBC Warehouse'" value="'10 MT'" percentage="6"/>-->
+<!--                    </div>-->
+                    <div class="col-lg-12 m-0 p-0">
+                        <div class="shadow-sm border m-2 p-4 bg-white text-center">
+                            <!-- Display the card name -->
+                            <div class="row justify-content-center">
+                                <h1>** PBC Warehouse **</h1>
+                                <hr/>
+                            </div>
+                            <div class="h5 fw-bold text-dark" style="font-size: 20px"><span t-esc="props.name"/></div>
+                            <div class="row">
+                                <div class="col-lg-6 m-0 p-0">
+                                    <t t-name="owl.ProductList" owl="1">
+                                        <nav>
+                                            <ul class="float-left" style="list-style: none; padding-left: 20;font-size:20px;text-align: justify;">
+                                                <li><span style="color: green;">1.</span> Patrol: <span t-esc="props.patrolQuantity"/>2 mt</li>
+                                                <li><span style="color: green;">2.</span> Jet Fuel: <span t-esc="props.jetFuelQuantity"/>5 mt</li>
+                                                <li><span style="color: green;">3.</span> Marine Fuel: <span t-esc="props.marineFuelQuantity"/>10 mt</li>
+                                                <li><span style="color: green;">4.</span> Octene: <span t-esc="props.octeneQuantity"/>50 mt</li>
+                                                <li><span style="color: green;">5.</span> Diesel: <span t-esc="props.dieselQuantity"/>10 mt</li>
+                                                <li><span style="color: green;">6.</span> Furnace Oil: <span t-esc="props.furnaceOilQuantity"/>5 mt</li>
+                                            </ul>
+                                        </nav>
+                                    </t>
+                                </div>
+                                <div class="col-lg-6 m-0 p-0 float-right">
+                                    <div class="mt-3" style="text-align: justify;">
+                                        <div class="h6 fw-bold text-muted">CRUD Oil</div>
+                                        <div class="h5 text-dark"><span t-esc="props.crudOilQuantity"/>25 MT</div>
+                                    </div>
+                                    <div class="mt-3" style="text-align: justify;">
+                                        <div class="h6 fw-bold text-muted">Refine Oil</div>
+                                        <div class="h5 text-dark"><span t-esc="props.refineOilQuantity"/>35 MT</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row justify-content-center">
+                                <KpiCard name="'Foreign Source'" value="'20 MT'" percentage="20"/>
+                                <KpiCard name="'Internal Source'" value="'0 MT'" percentage="-3"/>
+                            </div>
+                            <!-- Display product type: CRUD Oil -->
+
+
+                            <!-- Display total product quantity on hand -->
+<!--                            <div class="h3 mt-5">-->
+<!--                                <span class="text-success">-->
+<!--                                    <span class="me-1 fa fa-arrow-up"/>-->
+<!--                                    <span t-esc="props.totalQuantity"/> units-->
+<!--                                </span>-->
+<!--                                <span> since last period</span>-->
+<!--                            </div>-->
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <KpiCard name="'Podma Warehouse'" value="'20 MT'" percentage="20"/>
+                        <KpiCard name="'Meghna Warehouse'" value="'30 MT'" percentage="-3"/>
+                        <KpiCard name="'Jamuna Warehouse'" value="'2 MT'" percentage="-10"/>
+                    </div>
+                    <br/>
+                    <hr/>
+                    <div class="d-flex justify-content-center">
+                        <h1 class="text-primary fw-bold">Inventory Dipo Stock</h1>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <KpiCard name="'Dipo-1'" value="'10 MT'" percentage="6"/>
+                        <KpiCard name="'Dipo-2'" value="'20 MT'" percentage="20"/>
+                        <KpiCard name="'Dipo-3'" value="'30 MT'" percentage="-3"/>
+                        <KpiCard name="'Dipo-4'" value="'21 MT'" percentage="-10"/>
+                    </div>
+                    <div class="row">
+                        <KpiCard name="'Dipo-5'" value="'13 MT'" percentage="6"/>
+                        <KpiCard name="'Dipo-6'" value="'32 MT'" percentage="20"/>
+                        <KpiCard name="'Dipo-7'" value="'30 MT'" percentage="-3"/>
+                        <KpiCard name="'Dipo-8'" value="'12 MT'" percentage="-10"/>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 m-0 p-0">
+                            <div class="shadow-sm border m-2 p-4 bg-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h3 class="text-primary fw-bold">Top Products</h3>
+                                    <div class="px-3 py-1 bg-primary cursor-pointer">
+                                        <span class="fa fa-arrow-right text-white"/>
+                                    </div>
+                                </div>
+                                <ChartRenderer type="'doughnut'" title="'Top Products Report'"/>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 m-0 p-0">
+                            <div class="shadow-sm border m-2 p-4 bg-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h3 class="text-primary fw-bold">Top Sales People</h3>
+                                    <div class="px-3 py-1 bg-primary cursor-pointer">
+                                        <span class="fa fa-arrow-right text-white"/>
+                                    </div>
+                                </div>
+                                <ChartRenderer type="'pie'" title="'Top Sales People Report'"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="row">
+                        <div class="col m-0 p-0">
+                            <div class="shadow-sm border m-2 p-4 bg-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h3 class="text-primary fw-bold">Monthly Sales</h3>
+                                    <div class="px-3 py-1 bg-primary cursor-pointer">
+                                        <span class="fa fa-arrow-right text-white"/>
+                                    </div>
+                                </div>
+                                <ChartRenderer type="'bar'" title="'Monthly Sales Report'"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col m-0 p-0">
+                            <div class="shadow-sm border m-2 p-4 bg-white">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h3 class="text-primary fw-bold">Partner Orders</h3>
+                                    <div class="px-3 py-1 bg-primary cursor-pointer">
+                                        <span class="fa fa-arrow-right text-white"/>
+                                    </div>
+                                </div>
+                                <ChartRenderer type="'line'" title="'Partner Orders Report'"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>
