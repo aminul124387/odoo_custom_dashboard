@@ -30,7 +30,11 @@
                         <div class="shadow-sm border m-2 p-4 bg-white text-center">
                             <!-- Display the card name -->
                             <div class="row justify-content-center">
-                                <h1>** PBC Warehouse **</h1>
+                                <div style="width: 150px; height: 120px; border-radius: 50%; margin: auto;">
+                                    <img src="odoo_custom_dashboard/static/images/BPC LOGO [Converted]-01.png" style="width: 100px; height: 100px; margin: auto;"/>
+                                </div>
+                                <h1>** BPC Warehouse **</h1>
+                                <div style="margin-bottom: 10px;"/>
                                 <hr/>
                             </div>
                             <div class="h5 fw-bold text-dark" style="font-size: 20px"><span t-esc="props.name"/></div>
@@ -60,9 +64,11 @@
                                     </div>
                                 </div>
                             </div>
-
+<!--                            <div style="width: 100px; height: 100px; border-radius: 50%; margin: auto; background-color: #f0f0f0;">-->
+<!--                    &lt;!&ndash; Add your logo or icon here &ndash;&gt;-->
+<!--                </div>-->
                             <div class="row justify-content-center">
-                                <KpiCard name="'Foreign Source'" value="'20 MT'" percentage="20"/>
+                                <KpiCard name="'Foreign Source'" value="'20 MT'" percentage="20" />
                                 <KpiCard name="'Internal Source'" value="'0 MT'" percentage="-3"/>
                             </div>
                             <!-- Display product type: CRUD Oil -->
